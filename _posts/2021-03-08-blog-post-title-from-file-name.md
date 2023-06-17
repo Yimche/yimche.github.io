@@ -40,3 +40,4 @@ instance eq a => eq (RoseTree a) where
   (==), (/=) :: RoseTree a -> RoseTree a -> Bool
   (==) (RoseNode a _) (RoseNode b _) = a == b
   (/=) a b                           = not (a == b)
+```
