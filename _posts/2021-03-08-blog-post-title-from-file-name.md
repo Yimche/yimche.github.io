@@ -30,3 +30,13 @@ ForEach ($thing in $things) {
     Write-Output "It highlights it using the GitHub style"
 }
 ```
+
+#### Some Haskell Code?
+
+```haskell
+data RoseTree a = RoseNode a [RoseTree a]
+
+instance eq a => eq (RoseTree a) where
+  (==), (/=) :: RoseTree a -> RoseTree a -> Bool
+  (==) (RoseNode a _) (RoseNode b _) = a == b
+  (/=) a b                           = not (a == b)
