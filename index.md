@@ -1,1 +1,0 @@
-Music Blog? Tech Blog? Thoughts Blog? Just a blog I suppose.

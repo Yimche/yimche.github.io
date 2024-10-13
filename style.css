@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "Iosevka";
+  src: url("/meta/fonts/IosevkaNerdFont-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "JetBrains Mono Medium";
+  src: url("/meta/fonts/JetBrainsMono-Medium.ttf") format("truetype");
+}
+
+
+
+:root{
+  --font: "Iosevka";
+  --rosewater: #f4dbd6;
+  --flamingo: #f0c6c6;
+  --pink: #f5bde6;
+  --mauve: #c6a0f6;
+  --red: #ed8796;
+  --maroon: #ee99a0;
+  --peach: #f5a97f;
+  --yellow: #eed49f;
+  --green: #a6da95;
+  --teal: #8bd5ca;
+  --sky: #91d7e3;
+  --sapphire: #7dc4e4;
+  --blue: #8aadf4;
+  --lavender: #b7bdf8;
+  --text: #cad3f5;
+  --subtext1: #b8c0e0;
+  --subtext0: #a5adcb;
+  --overlay2: #939ab7;
+  --overlay1: #8087a2;
+  --overlay0: #6e738d;
+  --surface2: #5b6078;
+  --surface1: #494d64;
+  --surface0: #363a4f;
+  --base: #24273a;
+  --mantle: #1e2030;
+  --crust: #181926;
+}
+
+body{
+	max-width:40em;
+	margin:0 auto;
+	padding:5px;
+  padding-top: 15px;
+	font-family:var(--font);
+	font-size:20px;
+	line-height:30px;
+	background-color:var(--base);
+	color:var(--text);
+}
+header#masthead,h1,h2,h3,dt,small,.small,dl#tweetlist dt,footer,label,#commentlist ol li cite,div.blogparent,input[type="submit"],figcaption{
+	font-family:var(--font);
+	font-weight:normal;
+	font-style:normal }
+h1,h2,h3,label,header#masthead{
+	line-height:1em
+}
+h1 {
+	font-size:2em
+}
+h2 a{
+	color:var(--text);
+	text-decoration: underline
+}
+h2,h3{
+	margin-top:2em
+}
+h3{
+	font-size:2em
+}
+a{
+	text-decoration:none;
+	color:var(--sapphire);
+	overflow-wrap:break-word;
+	word-wrap:break-word
+}
+a:visited{
+	color:var(--blue);
+}
+a:hover{
+	text-decoration:underline
+}
+a[title="Julian Mo"]{
+  font-size:2em;
+}
+li{
+  font-family:var(--font);
+}
+
