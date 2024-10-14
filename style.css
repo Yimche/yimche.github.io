@@ -160,6 +160,7 @@ body#startpage .scroll{
   width: inherit;
   align-items: initial;
   overflow: scroll;
+  justify-content: left;
 }
 body#startpage .title-uni{
   color: var(--red);
@@ -171,7 +172,10 @@ body#startpage .title-play{
   color: var(--green);
 }
 body#startpage .links{
-  display:block;
+  display:flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
 }
 body#startpage li{
   list-style-type: none;
