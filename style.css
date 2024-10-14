@@ -148,12 +148,16 @@ body#startpage .bookmarks{
   line-height: 1.25em;
 }
 body#startpage .category{
+  display: flex;
+  flex-direction: column;
   margin: 15px;
   height: 5em;
   width: 5em;
   padding: 15px;
   background-color: var(--mantle);
   overflow: hidden;
+  align-items: initial;
+  justify-content: left;
 }
 body#startpage .scroll{
   height: inherit;
