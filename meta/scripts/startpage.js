@@ -62,42 +62,6 @@ function updateTime() {
 
 setInterval(updateTime, 10);
 
-//function handleKeyPress(event) {
-//  if (event.key === 'Enter') {
-//    performSearch();
-//  }
-//}
-//
-//function performSearch() {
-//  var searchTerm = document.querySelector('input').value;
-//  if (searchTerm.trim() !== '') {
-//    if (searchTerm.trim().includes('https://')) {
-//      window.location.href = searchTerm.trim();
-//    } else if (
-//      searchTerm.trim().includes('www.')      ||
-//      searchTerm.trim().includes('.org')      ||
-//      searchTerm.trim().includes('.com')      ||
-//      searchTerm.trim().includes('.net')      ||
-//      searchTerm.trim().includes('.gov')      ||
-//      searchTerm.trim().includes('.edu')      ||
-//      searchTerm.trim().includes('.co')       ||
-//      searchTerm.trim().includes('.io') 
-//    ) {
-//      window.location.href = 'https://' + encodeURI(searchTerm.trim());
-//    } else if (
-//      searchTerm.trim().includes('127.0.0.1') &&
-//      searchTerm.trim().includes('.html')
-//    ) {
-//      window.location.href = 'http://' + searchTerm;
-//    } else {
-//      // var googleSearchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(searchTerm);
-//      var duckSearchUrl = 'https://duckduckgo.com/?q=' + encodeURIComponent(searchTerm)
-//      window.location.href = duckSearchUrl;
-//    }
-//    document.querySelector('input').value = '';
-//  }
-//}
-
 const search = document.getElementById('search');
 
 search.addEventListener('input', function() {
@@ -143,6 +107,38 @@ function handleKeyPress(event) {
     if (visibleLinks.length === 1) {
       const url = visibleLinks[0].querySelector('a').href; // Assuming each li contains an <a> tag
       window.location.href = url; // Navigate to the link
+    } else if (visibleLinks.length === 0) {
+      performSearch();
     }
   }
 }
+
+function performSearch() {
+  var query = document.getElementById('search').value;
+  if (query.trim() !== '') {
+    if (query.trim().includes('https://')) {
+      window.location.href = query.trim();
+    } else if (
+      query.trim().includes('www.')      ||
+      query.trim().includes('.org')      ||
+      query.trim().includes('.com')      ||
+      query.trim().includes('.net')      ||
+      query.trim().includes('.gov')      ||
+      query.trim().includes('.edu')      ||
+      query.trim().includes('.co')       ||
+      query.trim().includes('.io') 
+    ) {
+      window.location.href = 'https://' + encodeURI(query.trim());
+    } else if (
+      query.trim().includes('127.0.0.1') &&
+      query.trim().includes('.html')
+    ) {
+      window.location.href = 'http://' + query;
+    } else {
+       var googleSearchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+      //var duckSearchUrl = 'https://duckduckgo.com/?q=' + encodeURIComponent(query)
+      window.location.href = googleSearchUrl;
+    }
+  }
+}
+
