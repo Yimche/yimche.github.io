@@ -123,10 +123,12 @@ function performSearch() {
       query.trim().includes('.org')      ||
       query.trim().includes('.com')      ||
       query.trim().includes('.net')      ||
+      query.trim().includes('.dev')      ||
       query.trim().includes('.gov')      ||
       query.trim().includes('.edu')      ||
       query.trim().includes('.co')       ||
       query.trim().includes('.io') 
+
     ) {
       window.location.href = 'https://' + encodeURI(query.trim());
     } else if (
