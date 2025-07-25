@@ -117,32 +117,32 @@ function performSearch() {
   var query = document.getElementById('search').value;
   if (query.trim() !== '') {
     if (query.trim().includes('https://')) {
-      window.location.href = query.trim();
+        window.location.href = query.trim();
     } else if (
-      query.trim().includes('cssa.club') ||
-      query.trim().includes('www.')      ||
-      query.trim().includes('.org')      ||
-      query.trim().includes('.com')      ||
-      query.trim().includes('.net')      ||
-      query.trim().includes('.dev')      ||
-      query.trim().includes('.gov')      ||
-      query.trim().includes('.edu')      ||
-      query.trim().includes('.co')       ||
-      query.trim().includes('.to')       ||
-      query.trim().includes('.io') 
+        query.trim().includes('cssa.club') ||
+        query.trim().includes('www.')      ||
+        query.trim().includes('.org')      ||
+        query.trim().includes('.com')      ||
+        query.trim().includes('.net')      ||
+        query.trim().includes('.dev')      ||
+        query.trim().includes('.gov')      ||
+        query.trim().includes('.edu')      ||
+        query.trim().includes('.co')       ||
+        query.trim().includes('.to')       ||
+        query.trim().includes('.io') 
     ) {
-      window.location.href = 'https://' + encodeURI(query.trim());
+        window.location.href = 'https://' + encodeURI(query.trim());
     } else if (
-      query.trim().includes('127.0.0.1:') ||
-      query.trim().includes('localhost:')
+        query.trim().includes('127.0.0.1:') ||
+        query.trim().includes('localhost:')
     ) {
-      window.location.href = 'http://' + query;
+        window.location.href = 'http://' + query;
     } else if (query.trim().includes('r/')) {
         window.location.href = 'https://reddit.com/' + query;
     } else {
-       var googleSearchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
-      //var duckSearchUrl = 'https://duckduckgo.com/?q=' + encodeURIComponent(query)
-      window.location.href = googleSearchUrl;
+        //var googleSearchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+        var duckSearchUrl = 'https://duckduckgo.com/?q=' + encodeURIComponent(query)
+        window.location.href = duckSearchUrl;
     }
   }
 }
