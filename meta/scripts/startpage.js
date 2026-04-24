@@ -129,7 +129,7 @@ function performSearch() {
         query.trim().includes('.edu')      ||
         query.trim().includes('.co')       ||
         query.trim().includes('.to')       ||
-        query.trim().includes('.io') 
+        query.trim().includes('.io')
     ) {
         window.location.href = 'https://' + encodeURI(query.trim());
     } else if (
