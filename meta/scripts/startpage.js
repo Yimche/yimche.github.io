@@ -1,27 +1,5 @@
 const firstName = "julian"; //Update your own name here.
-var weekDays = [
-  "sunday",
-  "monday",
-  "tuesday",
-  "wednesday",
-  "thursday",
-  "friday",
-  "saturday",
-];
-var months = [
-  "january",
-  "february",
-  "march",
-  "april",
-  "may",
-  "june",
-  "july",
-  "august",
-  "september",
-  "october",
-  "november",
-  "december",
-];
+const timezone = "Australia/Canberra";
 
 function getWelcomeTime(hours) {
   var welcomeString = "";
@@ -42,14 +20,23 @@ function getNumSuffix(num) {
 
 function updateTime() {
   var curTime = new Date();
-  var hours = curTime.getHours();
-  var minutes = curTime.getMinutes();
-  if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
-  var day = weekDays[curTime.getDay()];
-  var month = months[curTime.getMonth()];
-  var dayNum = curTime.getDate();
+  var parts = new Intl.DateTimeFormat("en", {
+    timeZone: timezone,
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(curTime);
+  var p = {};
+  parts.forEach(function(part) { p[part.type] = part.value; });
+
+  var hours = parseInt(p.hour);
+  var minutes = p.minute;
+  var day = p.weekday.toLowerCase();
+  var month = p.month.toLowerCase();
+  var dayNum = parseInt(p.day);
 
   var welcomeString = getWelcomeTime(hours) + firstName + ".";
   var clockString = hours + ":" + minutes;
